@@ -101,14 +101,12 @@ public func stringFromDate(date: Date, format: String) -> String {
     return formatter.string(from: date)
 }
 
-public func judgeEmail() -> Bool {
-    if let text = mailTextField.text {
-        let emailRegex = "[A-Z0-9a-z.%+-]+@[A-za-z0-9.-]+\\.[A-za-z]{2,6}"
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: text)
-    } else {
-        return false
-    }
+public func judgeEmail(text: String) -> Bool {
+    let emailRegex = "[A-Z0-9a-z.%+-]+@[A-za-z0-9.-]+\\.[A-za-z]{2,6}"
+    return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: text)
 }
+
+
 public func alert(title: String, message: String, isCancel: Bool) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     let ok = UIAlertAction(title: "OK", style: .default) { (action) in
