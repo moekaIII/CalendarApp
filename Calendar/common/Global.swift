@@ -100,3 +100,26 @@ public func stringFromDate(date: Date, format: String) -> String {
     formatter.dateFormat = format
     return formatter.string(from: date)
 }
+
+public func judgeEmail() -> Bool {
+    if let text = mailTextField.text {
+        let emailRegex = "[A-Z0-9a-z.%+-]+@[A-za-z0-9.-]+\\.[A-za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: text)
+    } else {
+        return false
+    }
+}
+public func alert(title: String, message: String, isCancel: Bool) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+        self.dismiss(animated: true, completion: nil)
+    }
+    alert.addAction(ok)
+    if isCancel {
+        let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (acrion) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancel)
+    }
+    present(alert, animated: true, completion: nil)
+}
