@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopMainView" customModule="Calendar" customModuleProvider="target">
+            <connections>
+                <outlet property="addEventButton" destination="p6u-8s-7p1" id="9bY-M7-oz7"/>
+                <outlet property="calendarView" destination="DBX-DF-kNE" id="Yez-LV-qAs"/>
+                <outlet property="eventView" destination="g9m-RD-3pm" id="1tZ-FW-dhp"/>
+                <outlet property="selectedDayLabel" destination="oKL-Of-fXx" id="JYf-ys-7mi"/>
+                <outlet property="tableView" destination="lyq-OL-gtr" id="qO1-lm-sFH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBX-DF-kNE" customClass="FSCalendar">
+                    <rect key="frame" x="16" y="60" width="382" height="448"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                            <color key="value" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                            <color key="value" red="1" green="0.44202643720000001" blue="0.094025296750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                            <color key="value" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
+                            <color key="value" red="1" green="0.44202643720000001" blue="0.094025296750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                            <color key="value" red="1" green="0.44202643720000001" blue="0.094025296750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="subtitleTextSize">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                            <color key="value" red="1" green="0.44202643720000001" blue="0.094025296750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
+                            <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9m-RD-3pm">
+                    <rect key="frame" x="16" y="518" width="382" height="328"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKL-Of-fXx">
+                            <rect key="frame" x="16" y="8" width="350" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="XQo-84-cdl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lyq-OL-gtr">
+                            <rect key="frame" x="0.0" y="43" width="382" height="285"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6u-8s-7p1">
+                            <rect key="frame" x="339" y="5" width="33" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="p6u-8s-7p1" secondAttribute="height" multiplier="1:1" id="epI-OZ-MEA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <state key="normal" title="+">
+                                <color key="titleColor" red="1" green="0.44202643720000001" blue="0.094025296750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="touchedAddEventButton:" destination="-1" eventType="touchUpInside" id="nbR-iV-LOP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="lyq-OL-gtr" secondAttribute="bottom" id="1PV-l6-yMD"/>
+                        <constraint firstItem="oKL-Of-fXx" firstAttribute="top" secondItem="g9m-RD-3pm" secondAttribute="top" constant="8" id="APb-9u-8jX"/>
+                        <constraint firstItem="lyq-OL-gtr" firstAttribute="top" secondItem="oKL-Of-fXx" secondAttribute="bottom" id="LjM-lg-hXg"/>
+                        <constraint firstAttribute="trailing" secondItem="oKL-Of-fXx" secondAttribute="trailing" constant="16" id="Lrw-o5-Fyh"/>
+                        <constraint firstItem="oKL-Of-fXx" firstAttribute="leading" secondItem="g9m-RD-3pm" secondAttribute="leading" constant="16" id="TIV-B8-mGO"/>
+                        <constraint firstAttribute="trailing" secondItem="lyq-OL-gtr" secondAttribute="trailing" id="Xec-1g-wTs"/>
+                        <constraint firstItem="p6u-8s-7p1" firstAttribute="top" secondItem="g9m-RD-3pm" secondAttribute="top" constant="5" id="Zrd-AA-NfA"/>
+                        <constraint firstAttribute="trailing" secondItem="p6u-8s-7p1" secondAttribute="trailing" constant="10" id="b1k-zk-WOA"/>
+                        <constraint firstItem="lyq-OL-gtr" firstAttribute="top" secondItem="p6u-8s-7p1" secondAttribute="bottom" constant="5" id="oDL-4R-v3r"/>
+                        <constraint firstItem="lyq-OL-gtr" firstAttribute="leading" secondItem="g9m-RD-3pm" secondAttribute="leading" id="oXh-1Q-qbD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="g9m-RD-3pm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="6RH-Mr-8kc"/>
+                <constraint firstItem="DBX-DF-kNE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="8ZE-qK-uXg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="g9m-RD-3pm" secondAttribute="bottom" constant="16" id="LKx-fr-hFq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DBX-DF-kNE" secondAttribute="trailing" constant="16" id="UnM-Rp-1qr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="g9m-RD-3pm" secondAttribute="trailing" constant="16" id="fgZ-8e-6wR"/>
+                <constraint firstItem="DBX-DF-kNE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="qDE-Li-pXQ"/>
+                <constraint firstItem="DBX-DF-kNE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="v61-y5-LqE"/>
+                <constraint firstItem="g9m-RD-3pm" firstAttribute="top" secondItem="DBX-DF-kNE" secondAttribute="bottom" constant="10" id="vaH-vZ-XdC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </view>
+    </objects>
+</document>
