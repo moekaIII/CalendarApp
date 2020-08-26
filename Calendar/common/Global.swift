@@ -1,13 +1,11 @@
 //
 //  Global.swift
-//  Calendar
 //
 //  Created by ゲスト on 2020/08/24.
 //  Copyright © 2020 Teacher. All rights reserved.
 //
-
 import UIKit
-import CalculateCalendarLogic
+//import CalculateCalendarLogic
 
 //for ViewController
 extension UIViewController {
@@ -58,7 +56,6 @@ public func loadTableViewCellFromXib(tableView: UITableView, cellName: String) {
 }
 
 //Date
-
 //public func getDay(_ date:Date) -> (String){
 //    let tmpCalendar = Calendar(identifier: .gregorian)
 //    let year = tmpCalendar.component(.year, from: date)
@@ -67,20 +64,20 @@ public func loadTableViewCellFromXib(tableView: UITableView, cellName: String) {
 //    return ("\(year).\(month).\(day)")
 //}
 // 祝日判定を行い結果を返すメソッド(True:祝日)
-public func judgeHoliday(_ date : Date) -> Bool {
-    //祝日判定用のカレンダークラスのインスタンス
-    let tmpCalendar = Calendar(identifier: .gregorian)
-
-    // 祝日判定を行う日にちの年、月、日を取得
-    let year = tmpCalendar.component(.year, from: date)
-    let month = tmpCalendar.component(.month, from: date)
-    let day = tmpCalendar.component(.day, from: date)
-
-    // CalculateCalendarLogic()：祝日判定のインスタンスの生成
-    let holiday = CalculateCalendarLogic()
-
-    return holiday.judgeJapaneseHoliday(year: year, month: month, day: day)
-}
+//public func judgeHoliday(_ date : Date) -> Bool {
+//    //祝日判定用のカレンダークラスのインスタンス
+//    let tmpCalendar = Calendar(identifier: .gregorian)
+//
+//    // 祝日判定を行う日にちの年、月、日を取得
+//    let year = tmpCalendar.component(.year, from: date)
+//    let month = tmpCalendar.component(.month, from: date)
+//    let day = tmpCalendar.component(.day, from: date)
+//
+//    // CalculateCalendarLogic()：祝日判定のインスタンスの生成
+//    let holiday = CalculateCalendarLogic()
+//
+//    return holiday.judgeJapaneseHoliday(year: year, month: month, day: day)
+//}
 //曜日判定(日曜日:1 〜 土曜日:7)
 public func getWeekIdx(_ date: Date) -> Int{
     let tmpCalendar = Calendar(identifier: .gregorian)
@@ -107,17 +104,17 @@ public func judgeEmail(text: String) -> Bool {
 }
 
 
-public func alert(title: String, message: String, isCancel: Bool) {
+public func alert(vc: UIViewController, title: String, message: String, isCancel: Bool) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     let ok = UIAlertAction(title: "OK", style: .default) { (action) in
-        self.dismiss(animated: true, completion: nil)
+        vc.dismiss(animated: true, completion: nil)
     }
     alert.addAction(ok)
     if isCancel {
         let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (acrion) in
-            self.dismiss(animated: true, completion: nil)
+            vc.dismiss(animated: true, completion: nil)
         }
         alert.addAction(cancel)
     }
-    present(alert, animated: true, completion: nil)
+    vc.present(alert, animated: true, completion: nil)
 }
